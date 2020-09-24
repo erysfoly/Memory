@@ -31,9 +31,9 @@ class Card extends HTMLElement{
         var me = this;
         this.isVisible = true;
         this.setAttribute('style', 'background:' + this.color);
-        // setTimeout(function(){
-        //     me.hide();
-        // }, 2000);
+        setTimeout(function(){
+            me.hide();
+        }, 2000);
     }
 
     hide() {
