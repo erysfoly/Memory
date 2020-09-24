@@ -18,3 +18,13 @@ main > memory-card{
     cursor:pointer;
     text-align:center;
 }
+
+#screen-menu,
+#screen-end {
+	background-color:white;
+}
+
+#screen-game,
+#screen-end {
+	display:none;
+}
