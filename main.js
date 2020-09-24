@@ -14,8 +14,8 @@
 	var resultTitle = document.getElementById('result-title')
 	var btnRetry = document.getElementById('retry');
 
-	window.customElements.define('memory-card', Card);
-	var card = new Card();
+	/*window.customElements.define('memory-card', Card);
+	var card = new Card();*/
 
 	var victory; //bool
 	
@@ -33,11 +33,13 @@
 	function inGame() {
 		screenGame.setAttribute("style","display:block");
 
-		card.setAttribute("class","rounded-lg");
+		/*card.setAttribute("class","rounded-lg");
 		card.addEventListener('cardClicked', function(ev){
 			console.log(ev);
 		});
-		screenGame.appendChild(card);
+		screenGame.appendChild(card);*/
+
+		createBoard();
 		
 		btnEndGame.onclick = function(){
 			screenGame.setAttribute("style","display:none");
@@ -47,9 +49,9 @@
 	}
 	
 	function endGame() {
-		screenGame.removeChild(card);
+		//screenGame.removeChild(card);
 		screenEnd.setAttribute("style","display:block");
-
+		console.log(victory);
 		if (victory == true) {
 			resultTitle.innerText = "Congrats!";
 			btnRetry.innerText = "Play again";
