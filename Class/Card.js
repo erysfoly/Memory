@@ -1,4 +1,4 @@
-class Card extends HTMLHtmlElement{
+class Card extends HTMLElement{
     color;
     isVisible = false;
     tabColors = ['red','darkred','yellow','green','grey','pink'];
