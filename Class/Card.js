@@ -1,11 +1,10 @@
-class Card {
+class Card extends HTMLHtmlElement{
     color;
     isVisible = false;
     tabColors = ['red','darkred','yellow','green','grey','pink'];
-    el;
 
     constructor() {
-        this.el = document.createElement('div');
+        super();
         this.initializeAttributes();
     }
 
@@ -18,8 +17,5 @@ class Card {
     }
 
 
-    flipCard(){
-
-    }
 }
 
