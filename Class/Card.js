@@ -15,7 +15,4 @@ class Card extends HTMLElement{
     randomize(base, minimum){
         return Math.floor(Math.random()*base) + minimum;
     }
-
-
 }
-
