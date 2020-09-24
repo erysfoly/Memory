@@ -2,6 +2,7 @@ class Card extends HTMLElement{
     defaultColor = 'black';
     color;
     isVisible = false;
+    isFound = false;
 
 
     constructor(color) {
@@ -27,13 +28,13 @@ class Card extends HTMLElement{
         this.hide();
     }
 
+    found(){
+        this.isFound = true;
+    }
+
     show(){
-        var me = this;
         this.isVisible = true;
         this.setAttribute('style', 'background:' + this.color);
-        setTimeout(function(){
-            me.hide();
-        }, 2000);
     }
 
     hide() {

@@ -11,13 +11,13 @@ function generateCards() {
     return cards
 }
 
-function shuffle(a) {
+function shuffle(cards) {
     var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
+    for (i = cards.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
+        x = cards[i];
+        cards[i] = cards[j];
+        cards[j] = x;
     }
-    return a;
+    return cards;
 }
