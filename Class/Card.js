@@ -1,19 +1,7 @@
-class Card extends HTMLHtmlElement{
-    color;
-    isVisible = false;
-    tabColors = ['red','darkred','yellow','green','grey','pink'];
-
+class Card extends HTMLElement{
+    
     constructor() {
         super();
-        this.initializeAttributes();
-    }
-
-    initializeAttributes() {
-        this.color = this.tabColors[this.randomize(this.tabColors.length, 0)];
-    }
-
-    randomize(base, minimum){
-        return Math.floor(Math.random()*base) + minimum;
     }
 
 

@@ -1,7 +1,12 @@
 (function () {
     var main = document.getElementById('main');
 
-        var card = new Card();
+	window.customElements.define("memory-card", Card);
+    var card = new Card();
+
+	
+	main.appendChild(card);
+
 
 
 })();
