@@ -10,22 +10,26 @@
 	<h1 class="text-center">Memory game</h1>
 	<main id="main" class="rounded-lg">
 		<div id="screen-menu" class="text-center rounded-lg p-5">
-			<h2 class="text-center">Choose difficulty</h2>
+			<h2 class="text-center pb-5">Choose difficulty</h2>
 			
-			<div class="input-group text-center w-75 m-auto pt-5 pb-5">
+			<div class="input-group text-center w-75 m-auto pb-5">
 				<label class="radio-inline text-center w-25 m-auto" for="noobie"><input type="radio" name="difficulty" id="noobie" class="mr-3" checked>Noobie</label>
 				<label class="radio-inline text-center w-25 m-auto" for="geek"><input type="radio" name="difficulty" id="geek" class="mr-3">Geek</label>
 				<label class="radio-inline text-center w-25 m-auto" for="maestro"><input type="radio" name="difficulty" id="maestro" class="mr-3">Maestro</label>
 			</div>
 			
-			
-			<button type="button" class="btn btn-primary" id="start">Start Game</button>
+			<button type="button" class="btn btn-outline-info" id="start">Start Game</button>
 		</div>
-		<div id="screen-game" class="text-center">
-			<button type="button" class="btn btn-primary" id="end">End Game</button>
+
+		<div id="screen-game" class="text-center p-5">
+			<button type="button" class="btn btn-info d-block" id="end">End Game</button>
 		</div>
-		<div id="screen-end" class="text-center" class="text-center rounded-lg p-5">
-		
+
+		<div id="screen-end" class="text-center rounded-lg p-5">
+			<div id="result">
+				<h2 id="result-title" class="pb-5"></h2>
+				<button type="button" class="btn btn-outline-info" id="retry"></button>
+			</div>
 		</div>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
