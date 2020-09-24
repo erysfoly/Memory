@@ -6,7 +6,8 @@ main {
     padding:24px;
     margin:0px auto;
 }
-main > memory-card{
+
+main > memory-card {
     background-color: red;
     border:#000 1px solid;
     width:71px;
@@ -17,4 +18,14 @@ main > memory-card{
     font-size:64px;
     cursor:pointer;
     text-align:center;
+}
+
+#screen-menu {
+	border:black solid 1px;
+	background-color:white;
+}
+
+#screen-game,
+#screen-end {
+	display:none;
 }
