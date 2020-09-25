@@ -6,7 +6,7 @@ main {
     padding:24px;
     margin:0px auto;
 }
-main > memory-card{
+#screen-game > memory-card{
 
     border:#000 1px solid;
     width:71px;
@@ -17,5 +17,17 @@ main > memory-card{
     font-size:64px;
     cursor:pointer;
     text-align:center;
-    transform: rotateY(180deg);
+}
+
+#screen-menu,
+#screen-end,
+#screen-end > #victory,
+#screen-end > #game-over {
+	background-color:white;
+}
+
+
+#screen-game,
+#screen-end {
+    display: none;
 }

@@ -2,10 +2,13 @@ class Card extends HTMLElement{
     defaultColor = 'black';
     color;
     isVisible = false;
+	ref;
 
-    constructor(color) {
+
+    constructor(color, ref) {
         super();
         this.color = color;
+		this.ref = ref;
         this.initializeAttributes();
         this.initListeners();
     }
@@ -17,7 +20,13 @@ class Card extends HTMLElement{
     initListeners(){
         this.onclick = function() {
             this.show();
-            var event = new CustomEvent('cardClicked', { 'detail': this.color });
+            var event = new CustomEvent('cardClicked', {
+			  detail: {
+				color: this.color,
+				ref: this.ref
+			  }
+			});
+
             this.dispatchEvent(event);
         }
     }
@@ -27,12 +36,12 @@ class Card extends HTMLElement{
     }
 
     show(){
-        var me = this;
+		var me = this;
         this.isVisible = true;
         this.setAttribute('style', 'background:' + this.color);
-        setTimeout(function(){
-            me.hide();
-        }, 2000);
+		setTimeout(function() {
+			me.hide();
+		}, 2000);
     }
 
     hide() {
@@ -40,3 +49,4 @@ class Card extends HTMLElement{
         this.setAttribute('style', 'background:' + this.defaultColor);
     }
 }
+
