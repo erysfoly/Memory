@@ -22,6 +22,7 @@ function createBoard() {
 
     for (var i = 0; i < cards.length; i++) {
         card = cards[i];
+		card.ref += i;
         card.setAttribute("class", "rounded-lg");
         screenGame.appendChild(card);
         card.addEventListener('cardClicked', function (ev) {

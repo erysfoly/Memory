@@ -1,16 +1,15 @@
 var niv1 = 3;
 var niv2 = 6;
 var niv3 = 12;
-var ref = 0;
 
 function generateCards() {
     var cards = [];
     for (var i = 0; i < niv1; i++) {
         var color = getColor();
-        cards.push(new Card(color,ref), new Card(color,ref));
-		ref++;
+        cards.push(new Card(color,1), new Card(color,1));
     }
-    return cards
+	
+    return cards;
 }
 
 function shuffle(cards) {
