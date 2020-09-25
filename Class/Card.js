@@ -2,12 +2,13 @@ class Card extends HTMLElement{
     defaultColor = 'black';
     color;
     isVisible = false;
-    isFound = false;
+	ref;
 
 
-    constructor(color) {
+    constructor(color, ref) {
         super();
         this.color = color;
+		this.ref = ref;
         this.initializeAttributes();
         this.initListeners();
     }
@@ -19,17 +20,13 @@ class Card extends HTMLElement{
     initListeners(){
         this.onclick = function() {
             this.show();
-            var event = new CustomEvent('cardClicked', { 'detail': this.color });
+            var event = new CustomEvent('cardClicked', { 'detail': this.color}, {'ref': this.ref });
             this.dispatchEvent(event);
         }
     }
 
     initializeColor(){
         this.hide();
-    }
-
-    found(){
-        this.isFound = true;
     }
 
     show(){

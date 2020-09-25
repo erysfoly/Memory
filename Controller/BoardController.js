@@ -1,13 +1,27 @@
+var main = document.getElementById('main');
+
+var screenMenu = document.getElementById('screen-menu');
 var screenGame = document.getElementById('screen-game');
+var screenEnd = document.getElementById('screen-end');
+
+var btnStartGame = document.getElementById("start");
+
+var btnEndGame = document.getElementById("end");
+
+var msgResult = document.getElementById('result');
+var resultTitle = document.getElementById('result-title')
+var btnRetry = document.getElementById('retry');
 window.customElements.define('memory-card', Card);
 
 var cards = generateCards();
 cards = shuffle(cards);
 
+var card;
+
 function createBoard() {
 
     for (var i = 0; i < cards.length; i++) {
-        var card = cards[i];
+        card = cards[i];
         card.setAttribute("class", "rounded-lg");
         screenGame.appendChild(card);
         card.addEventListener('cardClicked', function (ev) {

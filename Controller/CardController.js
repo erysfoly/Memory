@@ -4,9 +4,9 @@ var niv3 = 12;
 
 function generateCards() {
     var cards = [];
-    for (var i = 0; i < niv2; i++) {
+    for (var i = 0; i < niv1; i++) {
         var color = getColor();
-        cards.push(new Card(color), new Card(color));
+        cards.push(new Card(color, i), new Card(color, i+1));
     }
     return cards
 }

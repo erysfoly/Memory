@@ -1,18 +1,5 @@
 (function () {
 	
-	var main = document.getElementById('main');
-
-	var screenMenu = document.getElementById('screen-menu');
-	var screenGame = document.getElementById('screen-game');
-	var screenEnd = document.getElementById('screen-end');
-
-	var btnStartGame = document.getElementById("start");
-
-	var btnEndGame = document.getElementById("end");
-
-	var msgResult = document.getElementById('result');
-	var resultTitle = document.getElementById('result-title')
-	var btnRetry = document.getElementById('retry');
 
 	/*window.customElements.define('memory-card', Card);
 	var card = new Card();*/
@@ -43,13 +30,18 @@
 		
 		btnEndGame.onclick = function(){
 			screenGame.setAttribute("style","display:none");
-			victory = true;
+			victory = false;
 			endGame();
 		};
 	}
 	
 	function endGame() {
-		//screenGame.removeChild(card);
+		for (var i = 0; i < cards.length; i++) {
+        card = cards[i];
+        screenGame.removeChild(card);
+    }
+	
+		
 		screenEnd.setAttribute("style","display:block");
 		console.log(victory);
 		if (victory == true) {
