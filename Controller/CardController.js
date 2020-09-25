@@ -1,12 +1,14 @@
 var niv1 = 3;
 var niv2 = 6;
 var niv3 = 12;
+var ref = 0;
 
 function generateCards() {
     var cards = [];
     for (var i = 0; i < niv1; i++) {
         var color = getColor();
-        cards.push(new Card(color, i), new Card(color, i+1));
+        cards.push(new Card(color,ref), new Card(color,ref));
+		ref++;
     }
     return cards
 }

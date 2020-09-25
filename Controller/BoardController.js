@@ -25,41 +25,59 @@ function createBoard() {
         card.setAttribute("class", "rounded-lg");
         screenGame.appendChild(card);
         card.addEventListener('cardClicked', function (ev) {
-            console.log(ev)
+            console.log(ev.detail.ref)
         });
     }
 }
 
-    /**
-     * récupère les cartes non trouvées puis cherche si une carte est déjà retourné
-     * si oui elle est trouvé et reste visible
-     * @param {Card} card
-     */
-    function matchCard(card) {
-        let cardsNotFound = cards.filter(card => !card.found());
-
-        let firstCard = cardsNotFound.find(card => card.isVisible);
-        // for (let i = 0; i < cardsNotFound.length; i++){
-        //     var card = cardsNotFound[i];
-        //     if (card.isVisible){
-        //         firstCard = card;
-        //         break;
-        //     }
-        // }
-        if (firstCard === undefined)
-            return;
-
-        if (firstCard.color === card.color) {
-            card.found();
-            firstCard.found();
-        } else {
-            setTimeout(card.hide, 1000);
-        }
-
-        cardsNotFound = cards.filter(card => !card.isFound);
-        if (cardsNotFound.length === 0) {
-            // endgame();
-        }
-
-
+/* 
+// Code de JB
+var main = document.getElementById('main');
+var cardSelected = null;
+var inter;
+var card1 = new MemoryCard(12, 'red', 10);
+var card2 = new MemoryCard(13, 'blue', 11);
+var card3 = new MemoryCard(14, 'blue', 12);
+var cards = [ card1, card2, card3 ];
+function cardIsClicked(ev){
+    promiseMyTwin(ev)
+        .then(function(result){
+            cardSelected = null;
+            if (result.win) {
+                cards.map( function(c){
+                    if (c.ref === result.cardSelected.ref || c.ref === result.cardClicked.ref) {
+                        c.blocked = true;
+                    }
+                    return c;
+                });
+                console.log('GAGNE');
+            }else{
+                console.log('PERDU');
+            }
+        }).catch( function(err){ console.log(err);});
 }
+function promiseMyTwin(ev) {
+    return new Promise(function(resolve, reject){
+        if (!cardSelected) {
+            cardSelected = ev.detail;
+            inter = setTimeout( function(){
+                resolve( { win : false } );
+            }, 5000);
+        } else {
+            clearTimeout(inter);
+            if (cardSelected.color === ev.detail.color ){
+                resolve( { win : true , cardSelected: cardSelected, cardClicked : ev.detail } );
+            } else {
+                resolve( { win : false } );
+            }
+        }
+    });
+}
+for (var i = 0; i < cards.length; i++) {
+    var c = cards[i];
+    main.appendChild(c);
+    c.addEventListener('cardClicked', function(ev){
+        cardIsClicked(ev);
+    });
+}
+*/

@@ -1,9 +1,5 @@
 (function () {
 	
-
-	/*window.customElements.define('memory-card', Card);
-	var card = new Card();*/
-
 	var victory; //bool
 	
 	initGame();
@@ -20,12 +16,6 @@
 	function inGame() {
 		screenGame.setAttribute("style","display:block");
 
-		/*card.setAttribute("class","rounded-lg");
-		card.addEventListener('cardClicked', function(ev){
-			console.log(ev);
-		});
-		screenGame.appendChild(card);*/
-
 		createBoard();
 		
 		btnEndGame.onclick = function(){
@@ -41,7 +31,6 @@
         screenGame.removeChild(card);
     }
 	
-		
 		screenEnd.setAttribute("style","display:block");
 		console.log(victory);
 		if (victory == true) {

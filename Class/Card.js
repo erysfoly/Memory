@@ -20,7 +20,13 @@ class Card extends HTMLElement{
     initListeners(){
         this.onclick = function() {
             this.show();
-            var event = new CustomEvent('cardClicked', { 'detail': this.color}, {'ref': this.ref });
+            var event = new CustomEvent('cardClicked', {
+			  detail: {
+				color: this.color,
+				ref: this.ref
+			  }
+			});
+
             this.dispatchEvent(event);
         }
     }
@@ -30,8 +36,12 @@ class Card extends HTMLElement{
     }
 
     show(){
+		var me = this;
         this.isVisible = true;
         this.setAttribute('style', 'background:' + this.color);
+		setTimeout(function() {
+			me.hide();
+		}, 2000);
     }
 
     hide() {
