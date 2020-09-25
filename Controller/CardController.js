@@ -2,9 +2,11 @@ var niv1 = 3;
 var niv2 = 6;
 var niv3 = 12;
 
+
+
 function generateCards() {
     var cards = [];
-    for (var i = 0; i < niv2; i++) {
+    for (var i = 0; i < 2; i++) {
         var color = getColor();
         cards.push(new Card(color), new Card(color));
     }
@@ -21,3 +23,4 @@ function shuffle(cards) {
     }
     return cards;
 }
+
