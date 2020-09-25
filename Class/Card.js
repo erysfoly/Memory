@@ -1,18 +1,42 @@
 class Card extends HTMLElement{
+    defaultColor = 'black';
     color;
     isVisible = false;
-    tabColors = ['red','darkred','yellow','green','grey','pink'];
 
-    constructor() {
+    constructor(color) {
         super();
+        this.color = color;
         this.initializeAttributes();
+        this.initListeners();
     }
 
     initializeAttributes() {
-        this.color = this.tabColors[this.randomize(this.tabColors.length, 0)];
+        this.initializeColor();
     }
 
-    randomize(base, minimum){
-        return Math.floor(Math.random()*base) + minimum;
+    initListeners(){
+        this.onclick = function() {
+            this.show();
+            var event = new CustomEvent('cardClicked', { 'detail': this.color });
+            this.dispatchEvent(event);
+        }
+    }
+
+    initializeColor(){
+        this.hide();
+    }
+
+    show(){
+        var me = this;
+        this.isVisible = true;
+        this.setAttribute('style', 'background:' + this.color);
+        setTimeout(function(){
+            me.hide();
+        }, 2000);
+    }
+
+    hide() {
+        this.isVisible = false;
+        this.setAttribute('style', 'background:' + this.defaultColor);
     }
 }

@@ -7,7 +7,7 @@ main {
     margin:0px auto;
 }
 main > memory-card{
-    background-color: red;
+
     border:#000 1px solid;
     width:71px;
     height:71px;
@@ -17,4 +17,5 @@ main > memory-card{
     font-size:64px;
     cursor:pointer;
     text-align:center;
+    transform: rotateY(180deg);
 }
