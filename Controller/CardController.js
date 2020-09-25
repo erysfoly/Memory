@@ -7,8 +7,12 @@ function generateCards() {
     var cards = [];
     for (var i = 0; i < niv1; i++) {
         var color = getColor();
+<<<<<<< Updated upstream
         cards.push(new Card(color,ref), new Card(color,ref));
 		ref++;
+=======
+        cards.push(new Card(color, 1, false), new Card(color, 1, false));
+>>>>>>> Stashed changes
     }
     return cards
 }
