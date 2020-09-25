@@ -6,7 +6,7 @@ function generateCards() {
     var cards = [];
     for (var i = 0; i < niv1; i++) {
         var color = getColor();
-        cards.push(new Card(color,1), new Card(color,1));
+        cards.push(new Card(color,i), new Card(color,i));
     }
 	
     return cards;

@@ -1,6 +1,26 @@
+var main = document.getElementById('main');
+
+var screenMenu = document.getElementById('screen-menu');
+var screenGame = document.getElementById('screen-game');
+var screenEnd = document.getElementById('screen-end');
+
+var btnStartGame = document.getElementById("start");
+
+var btnEndGame = document.getElementById("end");
+
+var msgResult = document.getElementById('result');
+var resultTitle = document.getElementById('result-title')
+var btnRetry = document.getElementById('retry');
+
+
+
+var cards;
+
+var inter;
+
 (function () {
 	
-	var victory; //bool
+	var victory = false; //bool
 	
 	initGame();
 	
@@ -27,9 +47,9 @@
 	
 	function endGame() {
 		for (var i = 0; i < cards.length; i++) {
-        card = cards[i];
-        screenGame.removeChild(card);
-    }
+			card = cards[i];
+			screenGame.removeChild(card);
+    	}
 	
 		screenEnd.setAttribute("style","display:block");
 		console.log(victory);
